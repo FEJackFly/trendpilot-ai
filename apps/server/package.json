@@ -1,0 +1,32 @@
+{
+  "name": "@trendpilot/server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsx watch src/index.ts",
+    "lint": "eslint",
+    "pretest": "pnpm --filter @trendpilot/shared build",
+    "pretypecheck": "pnpm --filter @trendpilot/shared build",
+    "start": "node dist/index.js",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@fastify/cors": "^10.0.1",
+    "@trendpilot/shared": "workspace:*",
+    "fastify": "^5.2.0",
+    "pino": "^9.5.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.12.0",
+    "@types/node": "^22.7.5",
+    "eslint": "^9.12.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.8.0",
+    "vitest": "^2.1.3"
+  }
+}
